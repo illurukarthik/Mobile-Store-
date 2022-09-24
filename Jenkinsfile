@@ -22,15 +22,6 @@ pipeline {
                }
           
        }
-	   stage('SonarQube report'){
-           steps{
-               echo "code quality check"
-               sh '''mvn clean verify sonar:sonar \
-                  -Dsonar.projectKey=mobilestore \
-                  -Dsonar.host.url=http://20.235.74.77:9000 \
-                  -Dsonar.login=sqp_026a0435557f6327864553ecd7960f63cdf5c414'''
-           }
-       }
        
        stage('Build stage'){
            steps{
